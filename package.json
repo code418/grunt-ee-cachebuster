@@ -1,0 +1,41 @@
+{
+  "name": "grunt-ee-cachebuster",
+  "description": "Cachebuster for Expression Engine",
+  "version": "0.0.1",
+  "homepage": "https://github.com/code418/grunt-ee-cachebuster",
+  "author": {
+    "name": "Richard Brown",
+    "email": "richard@agilepixel.io",
+    "url": "http://agilepixel.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code418/grunt-ee-cachebuster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/code418/grunt-ee-cachebuster/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/code418/grunt-ee-cachebuster/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}

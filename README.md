@@ -1,4 +1,4 @@
-# grunt-ee-cachebuster
+# grunt-ee-cachebuster  [![Dependency Status](https://david-dm.org/code418/grunt-ee-cachebuster.png)](https://david-dm.org/code418/grunt-ee-cachebuster) [![devDependency Status](https://david-dm.org/code418/grunt-ee-cachebuster/dev-status.png)](https://david-dm.org/code418/grunt-ee-cachebuster#info=devDependencies)
 
 > Cachebuster for Expression Engine
 

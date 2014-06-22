@@ -5,11 +5,8 @@
  * Copyright (c) 2014 Richard Brown
  * Licensed under the MIT license.
  */
-
 'use strict';
-
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     jshint: {
@@ -18,70 +15,78 @@ module.exports = function(grunt) {
         'tasks/*.js',
         '<%= nodeunit.tests %>'
       ],
-      options: {
-        jshintrc: '.jshintrc'
-      }
+      options: { jshintrc: '.jshintrc' }
     },
     fixmyjs: {
-      options: {
-        jshintrc: '.jshintrc'
-      },
+      options: { jshintrc: '.jshintrc' },
       tasks: {
         files: [{
-          expand: true,
-          cwd: 'tasks/',
-          src: ['*.js'],
-          dest: 'tasks/'
-        }]
+            expand: true,
+            cwd: 'tasks/',
+            src: ['*.js'],
+            dest: 'tasks/'
+          }]
+      },
+      tests: {
+        files: [{
+            expand: true,
+            cwd: 'test/',
+            src: ['*.js'],
+            dest: 'test/'
+          }]
+      },
+      grunt: {
+        files: [{
+            expand: true,
+            cwd: '',
+            src: ['Gruntfile.js'],
+            dest: ''
+          }]
       }
     },
-
-    // Before generating any new files, remove any previously-created files.
-    clean: {
-      tests: ['tmp']
+    clean: { test: ['test/tmp'] },
+    copy: {
+      test: {
+        files: [{
+            cwd: 'test/source/',
+            src: '*',
+            dest: 'test/tmp',
+            expand: true
+          }]
+      }
     },
-
-    // Configuration to be run (and then tested).
     ee_cachebuster: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      },
+      default_options: { options: {} },
       custom_options: {
         options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
+          templates: ['test/tmp/*'],
+          themefiles: ['tasks/*.js'],
+          themefolder: 'tasks/'
         }
       }
     },
-
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js']
-    }
-
+    nodeunit: { tests: ['test/*_test.js'] }
   });
-
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
-
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  //grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-fixmyjs');
-
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'ee_cachebuster']);
-
+  grunt.registerTask('test', [
+    'clean',
+    'copy',
+    'ee_cachebuster',
+    'nodeunit'
+  ]);
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['fixmyjs', 'jshint', 'test']);
-
+  grunt.registerTask('default', [
+    'fixmyjs',
+    'jshint',
+    'test'
+  ]);
 };

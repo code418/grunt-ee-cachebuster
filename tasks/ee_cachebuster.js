@@ -7,13 +7,14 @@
  */
 'use strict';
 module.exports = function (grunt) {
-  grunt.registerTask('ee_cachebuster', 'Cachebuster for Expression Engine', function () {
+  grunt.registerMultiTask('ee_cachebuster', 'Cachebuster for Expression Engine', function () {
     var crypto = require('crypto');
     var options = this.options({
         templates: [],
         themefiles: [],
         themefolder: 'themes/'
       });
+    console.log(options);
     var cacheBust = function (file, signature, templates) {
       var original = file;
       file = file.replace(options.themefolder, '{theme_folder_url}');

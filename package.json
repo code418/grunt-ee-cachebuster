@@ -1,7 +1,7 @@
 {
   "name": "grunt-ee-cachebuster",
   "description": "Cachebuster for Expression Engine",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/code418/grunt-ee-cachebuster",
   "author": {
     "name": "Richard Brown",

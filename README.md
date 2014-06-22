@@ -1,4 +1,4 @@
-# grunt-ee-cachebuster  [![Dependency Status](https://david-dm.org/code418/grunt-ee-cachebuster.png)](https://david-dm.org/code418/grunt-ee-cachebuster) [![devDependency Status](https://david-dm.org/code418/grunt-ee-cachebuster/dev-status.png)](https://david-dm.org/code418/grunt-ee-cachebuster#info=devDependencies)
+# grunt-ee-cachebuster  [![Dependency Status](https://david-dm.org/code418/grunt-ee-cachebuster.png)](https://david-dm.org/code418/grunt-ee-cachebuster) [![devDependency Status](https://david-dm.org/code418/grunt-ee-cachebuster/dev-status.png)](https://david-dm.org/code418/grunt-ee-cachebuster#info=devDependencies) [![Build Status](https://travis-ci.org/code418/grunt-ee-cachebuster.svg?branch=master)](https://travis-ci.org/code418/grunt-ee-cachebuster)
 
 > Cachebuster for Expression Engine
 
@@ -25,11 +25,13 @@ In your project's Gruntfile, add a section named `ee_cachebuster` to the data ob
 ```js
 grunt.initConfig({
   ee_cachebuster: {
-      options: {
-        templates: ['genting_cms/expressionengine/templates/default_site/**/*'],
-        themefiles: ['themes/genting_casino/js/source/*.js', 'themes/genting_casino/js/min/*.js', 'themes/genting_casino/css/*.css'],
-        themefolder: 'themes/'
-      }
+  		example:{
+	      options: {
+	        templates: ['genting_cms/expressionengine/templates/default_site/**/*'],
+	        themefiles: ['themes/genting_casino/js/source/*.js', 'themes/genting_casino/js/min/*.js', 'themes/genting_casino/css/*.css'],
+	        themefolder: 'themes/'
+	      }
+  		}
   },
 });
 ```
@@ -59,3 +61,4 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
  * 2014-06-13   v0.0.1   Initial Release
+ * 2014-06-22	v0.1.0   Multi-task with unit tests

@@ -27,8 +27,8 @@ grunt.initConfig({
   ee_cachebuster: {
   		example:{
 	      options: {
-	        templates: ['genting_cms/expressionengine/templates/default_site/**/*'],
-	        themefiles: ['themes/genting_casino/js/source/*.js', 'themes/genting_casino/js/min/*.js', 'themes/genting_casino/css/*.css'],
+	        templates: ['admin/expressionengine/templates/default_site/**/*'],
+	        themefiles: ['themes/theme_directory/js/source/*.js', 'themes/theme_directory/js/min/*.js', 'themes/theme_directory/css/*.css'],
 	        themefolder: 'themes/'
 	      }
   		}
